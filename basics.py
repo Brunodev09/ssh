@@ -32,7 +32,7 @@
 # swapping values with comma syntax --> myName = ['bruno','giannotti']; myName[0], myName[1] = myName[1], myName[0];
 
 
-# List comprehension are really cool, pretty much like filter, map, reduce all combined in one syntax
+# List comprehension is really cool, pretty much like filter, map, reduce all combined in one syntax
 # --> [x*2 for x in myNumberList]
 # --> [char.upper() for char in namesList]
 # --> [person[0].upper() for person in personList] --> Makes the first char upper! Coolio!
