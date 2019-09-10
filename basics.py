@@ -51,41 +51,79 @@
 # for myVal in map.values():
 # for k in map.keys():
 # for k,v in map.items(): 
+
+import random
+
+def printer():
+    myList = [1,2,3, 'hey']
+    strList = str(myList)
+    myOptList = []
+
+    dec = 12321312
+    integer = int(dec)
+
+
+    color = input()
+    if (color == 'blue'):
+        print('nice I guess')
+    elif (color == 'black'):
+        print('yeah why not')
+    elif (not color):
+        print('null?')    
+    else:
+        print('wut')
+
+    if (color):
+        for char in color:
+            print(char)
+
+    if (len(myList) > 0):
+        for item in myList:
+            if (isinstance(item, str)):
+                print(item)
+                myOptList.append(item)
+
+    print(type(color))        
+    print(myOptList)
   
+def dicts():
+    myObj = {}
+    limit = 100
+    counter = 0
+    while (counter < limit):
+        counter += 1
+        myObj["prop%s"%(counter)] = [{"internal%s"%(counter+1): random.randint(0, 100)}]
+
+    return myObj 
+
+def lists():
+    myList = []
+    limit = random.randint(50,100)
+    counter = 0    
+    while (counter < limit):
+        myList.append({"prop": random.randint(0,1000)})
+        counter += 1
+    return myList    
+
+def separatePairs(arr):
+    "separate pairs and odds from a weird tuple"
+    arg = str(type(arr))
+    pairs = []
+    odds = []
+    if "list" in arg:
+        print('TYPE_OK')
+        for i in arr:
+            if i["prop"] and (i["prop"] % 2) == 0:
+                pairs.append(i)
+            else: odds.append(i)
+        return {"odds": odds, "pairs": pairs}
+
+    else: print('TYPE_NOT_OK')    
+    return None
 
 
-
-
-myList = [1,2,3, 'hey'];
-strList = str(myList)
-myOptList = [];
-
-dec = 12.321312;
-integer = int(dec);
-
-
-color = input();
-if (color == 'blue'):
-    print('nice I guess')
-elif (color == 'black'):
-    print('yeah why not')
-elif (not color):
-    print('null?')    
-else:
-    print('wut')
-
-if (color):
-    for char in color:
-        print(char);
-
-if (len(myList) > 0):
-    for item in myList:
-        if (isinstance(item, str)):
-            print(item);
-            myOptList.append(item);
-
-print(type(color))        
-print(myOptList)
-
+myList = lists()
+result = separatePairs(myList)
+print(len(result["pairs"]), len(result["odds"]))
 
 
