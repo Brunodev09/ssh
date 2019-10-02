@@ -22,7 +22,6 @@ if argLen != 5:
     sys.exit()    
 
 exec = Auth(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
-
 command = f'ssh -L 127.0.0.1:1206:127.0.0.1:1206 {exec.user}:{exec.pw}@{exec.server} -p {exec.port}'
 
 std = subprocess.run(command, shell=True, check=True)
