@@ -1,6 +1,11 @@
 import subprocess
 import sys
 
+def anotherProcess(cmd):
+    print('Running custom command...')
+    cmd = subprocess.run(cmd, shell=True, check=True)
+    print(cmd)
+
 class Auth:
     def __init__(self, user, pw, server, port):
         self.user = user
@@ -26,9 +31,4 @@ command = f'ssh -L 127.0.0.1:1206:127.0.0.1:1206 {exec.user}:{exec.pw}@{exec.ser
 
 std = subprocess.run(command, shell=True, check=True)
 print(std)
-
-def anotherProcess(cmd):
-    print('Running custom command...')
-    cmd = subprocess.run(cmd, shell=True, check=True)
-    print(cmd)
     
